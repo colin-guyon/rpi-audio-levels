@@ -28,12 +28,14 @@ This generates the `rpi_audio_levels.so`, be sure to add its directory to the PY
 
 ```python
 from rpi_audio_levels import AudioLevels
-DATA_SIZE = 11  # -> we will give chunks of 2^11 audio samples
+DATA_SIZE = 11  # -> we will give chunks of 2**11 audio samples
 # Preliminary call to prepare things
 audio_levels = AudioLevels(DATA_SIZE)
 
+# example of 6 arbitrary frequency bands. Indexes must be between 0 and 2**(DATA_SIZE - 1)
+bands_indexes = ((0,100), (100,200), (200,600), (600,700), (700,800), (800,1024))
+
 # Then retrieve audio levels each time you have new data
-bands_indexes = ((0,100), (100,200), (200,600), (600,700), (700,800), (800,1024)) # example of 6 frequency bands
 levels = audio_levels.compute(data, bands_indexes)
-# data must be an numpy array of real data with float dtype (np.float32), with only 1 dimmension.
+# data must be an numpy array of 2**DATA_SIZE real data with float dtype (np.float32), with only 1 dimmension.
 ```
