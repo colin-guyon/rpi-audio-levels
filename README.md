@@ -3,7 +3,7 @@
 ## Description
 
 Python binding allowing to retrieve audio levels by frequency bands given audio samples, on
-a raspberry pi.
+a raspberry pi (aka power spectrum).
 It uses the GPU FFT lib (see http://www.aholme.co.uk/GPU_FFT/Main.htm).
 
 I compared implementations using cython and ctypes, and the ctypes solution was slower
