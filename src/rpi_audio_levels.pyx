@@ -21,7 +21,7 @@ cdef extern from "_rpi_audio_levels.h":
 cdef class AudioLevels:
     """ Allows to calculate audio levels by frequency, using the GPU FFT lib.
 
-    a = AudioLevels(10)
+    a = AudioLevels(10, <bands_count>)
     ...
     frequency_bands_indexes = [[0,200], [200,400], ...]
     levels = a.compute(<float_numpy_data_1D>, frequency_bands_indexes)
