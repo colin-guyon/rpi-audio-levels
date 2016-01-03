@@ -34,7 +34,7 @@ BANDS_COUNT = 6  # -> we will give 6 ranges of band indexes for each computation
 audio_levels = AudioLevels(DATA_SIZE, BANDS_COUNT)
 
 # example of 6 arbitrary frequency bands. Indexes must be between 0 and 2**(DATA_SIZE - 1)
-bands_indexes = ((0,100), (100,200), (200,600), (600,700), (700,800), (800,1024))
+bands_indexes = [[0,100], [100,200], [200,600], [600,700], [700,800], [800,1024]]
 
 # Then retrieve audio levels each time you have new data
 levels = audio_levels.compute(data, bands_indexes)
