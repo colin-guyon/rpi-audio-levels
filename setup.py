@@ -23,7 +23,7 @@ setup(
     description = 'Python binding for Raspberry Pi GPU FFTerface',
     long_description = README,
     install_requires=[
-          'cython',
+          'cython>=0.19.1',
           'numpy',
       ],
     cmdclass={'build_ext': build_ext},
