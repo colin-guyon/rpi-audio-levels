@@ -24,7 +24,7 @@ cdef class AudioLevels:
     a = AudioLevels(10, <bands_count>)
     ...
     frequency_bands_indexes = [[0,200], [200,400], ...]
-    levels = a.compute(<float_numpy_data_1D>, frequency_bands_indexes)
+    levels, means, stds = a.compute(<float_numpy_data_1D>, frequency_bands_indexes)
     ...
     """
 
