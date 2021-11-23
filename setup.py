@@ -1,4 +1,5 @@
 import os
+import numpy
 from Cython.Distutils import build_ext
 from distutils.core import setup
 from distutils.extension import Extension
@@ -27,6 +28,7 @@ setup(
           'numpy',
       ],
     cmdclass={'build_ext': build_ext},
+    include_dirs=[numpy.get_include()],
     ext_modules=[
         Extension('rpi_audio_levels',
                   sources=sources,
